@@ -1,37 +1,21 @@
 require 'rubygems'
 require 'nokogiri'
 
-class Node
-  attr_accessor :id
-  def initialize(id)
-    @id = id
+class Item
+  attr_accessor :name
+  def initialize(name)
+    @id = name
   end
 end
 
-class Edge
-  attr_accessor :id, :from, :to
-  def initialize(id, from, to)
-    @id = id
-    @from = from
-    @to = to
-  end
-end
-
-file = File.open("data.gxl")
+file = File.open("data.xml")
 document = Nokogiri::XML(file)
 file.close
 
-node_elements = document.xpath('/gxl/graph/node')
-nodes = node_elements.map {|element| Node.new(element.attribute('id').value)}
-
-edge_elements = document.xpath('/gxl/graph/edge')
-edges = edge_elements.map do |element|
-  Edge.new(
-    element.attribute('id').value,
-    element.attribute('to').value,
-    element.attribute('from').value
-  )
+metadata = document.root.children[3]
+items = metadata.children.reject{|child| child.attribute('name').nil?}.map do |child|
+  Item.new(child.attribute('name').value)
 end
 
-puts nodes.inspect
-puts edges.inspect
+puts "#{items.size} items"
+puts items.inspect
