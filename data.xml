@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dataset  xmlns="http://.com/schemas/xmldata/1/"  xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+<!--
+<dataset
+    xmlns="http://.com/schemas/xmldata/1/"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:schemaLocation="http://.com/schemas/xmldata/1/ xmldata.xsd"
+>
+-->
+    <metadata>
+          <item name="Problem ID" type="xs:string" length="32"/>
+          <item name="Account Title" type="xs:string" length="162"/>
+          <item name="Account Name" type="xs:string" length="162"/>
+          <item name="Reassignment" type="xs:int" precision="1"/>
+          <item name="Initial Severity" type="xs:int" precision="1"/>
+          <item name="Resolution Desc" type="xs:string" length="510"/>
+          <item name="Resolver Name" type="xs:string" length="82"/>
+          <item name="Problem Code" type="xs:string" length="32"/>
+          <item name="Status" type="xs:string" length="32"/>
+    </metadata>
+    <data>
+        <row>
+            <value>AP-06684768    </value>
+            <value>ESA</value>
+            <value>1</value>
+            <value>8</value>
+            <value>8</value>
+            <value xs:nil="true" />
+            <value xs:nil="true" />
+            <value>ADDITION TO EXISTING FIREWALL</value>
+            <value></value>
+            <value>ESA BRIDGE                              </value>
+            <value>CLOSED         </value>
+            <value>CLOSED         </value>
+        </row>
+        <row>
+            <value>AP-06720564    </value>
+            <value>ESA</value>
+            <value>2011-01-19T12:02:47</value>
+            <value>2011-01-19T12:02:49</value>
+            <value>0</value>
+            <value>776</value>
+            <value>SCP UESCADADEV -&gt; UESCADAPW/BW</value>
+            <value>NETAU_NETMGTS  </value>
+            <value>N/A</value>
+            <value>ESA BRIDGE                              </value>
+            <value>CLOSED         </value>
+            <value>CLOSED         </value>
+        </row>
+    </data>
+</dataset>
